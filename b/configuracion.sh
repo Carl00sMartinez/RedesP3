@@ -1,3 +1,4 @@
+# chmod +x tu_script.sh
 
 echo "================================================================="
 echo "CONFIGURACIÓN DE RUTAS E IPS"
