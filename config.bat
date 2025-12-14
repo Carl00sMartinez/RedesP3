@@ -206,4 +206,6 @@ echo kathara exec host_sw2 -- route -n
 echo kathara exec r8 -- route -n
 echo kathara exec host_sw2 -- traceroute -n 172.20.176.1
 echo kathara exec r8 -- traceroute -n 172.20.187.1
+echo kathara exec host_sw2 -- tcp -dump -i eth0
+echo kathara exec r8 -- tcp -dump -i eth0
 pause
