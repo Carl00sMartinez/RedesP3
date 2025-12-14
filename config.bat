@@ -69,7 +69,7 @@ echo Rutas SW13...
 kathara exec host_sw13 -- /bin/bash -c "route add default gw 10.10.90.126"
 
 echo Direccion SW14...
-kathara exec host_sw14 -- /bin/bash -c "ifconfig eth0 10.10.91.193 netmask 255.255.225.224 broadcast 10.10.91.223 up" 
+kathara exec host_sw14 -- /bin/bash -c "ifconfig eth0 10.10.91.193 netmask 255.255.255.224 broadcast 10.10.91.223 up" 
 echo Rutas SW14... 
 kathara exec host_sw14 -- /bin/bash -c "route add default gw 10.10.91.222"
 
@@ -79,7 +79,7 @@ echo Rutas SW15...
 kathara exec host_sw15 -- /bin/bash -c "route add default gw 10.10.86.254"
 
 echo Direccion SW16...
-kathara exec host_sw16 -- /bin/bash -c "ifconfig eth0 10.10.84.1 netmask 255.255.255.255 broadcast 10.10.84.255 up" 
+kathara exec host_sw16 -- /bin/bash -c "ifconfig eth0 10.10.84.1 netmask 255.255.255.0 broadcast 10.10.84.255 up" 
 echo Rutas SW16... 
 kathara exec host_sw16 -- /bin/bash -c "route add default gw 10.10.84.254"
 
@@ -135,64 +135,64 @@ kathara exec r6 -- /bin/bash -c "ifconfig eth1 10.10.91.246 netmask 255.255.255.
 kathara exec r6 -- /bin/bash -c "ifconfig eth2 10.10.92.2 netmask 255.255.255.252 broadcast 10.10.92.3 up"
 kathara exec r6 -- /bin/bash -c "ifconfig eth3 10.10.92.33 netmask 255.255.255.252 broadcast 10.10.92.35 up"
 echo Rutas r6(1,3,4,10,11)...
-kathara exec r6 -- /bin/bash -c "route add-net 10.10.91.64 netmask 255.255.255.192 gw 10.10.91.245 dev eth1"
-kathara exec r6 -- /bin/bash -c "route add-net 10.10.85.0 netmask 255.255.255.0 gw 10.10.91.245 dev eth1"
-kathara exec r6 -- /bin/bash -c "route add-net 10.10.80.0 netmask 255.255.254.0 gw 10.10.92.1 dev eth2"
-kathara exec r6 -- /bin/bash -c "route add-net 10.10.91.128 netmask 255.255.255.192 gw 10.10.92.1 dev eth2"
-kathara exec r6 -- /bin/bash -c "route add-net 10.10.91.224 netmask 255.255.255.240 gw 10.10.92.1 dev eth2"
+kathara exec r6 -- /bin/bash -c "route add -net 10.10.91.64 netmask 255.255.255.192 gw 10.10.91.245 dev eth1"
+kathara exec r6 -- /bin/bash -c "route add -net 10.10.85.0 netmask 255.255.255.0 gw 10.10.91.245 dev eth1"
+kathara exec r6 -- /bin/bash -c "route add -net 10.10.80.0 netmask 255.255.254.0 gw 10.10.92.1 dev eth2"
+kathara exec r6 -- /bin/bash -c "route add -net 10.10.91.128 netmask 255.255.255.192 gw 10.10.92.1 dev eth2"
+kathara exec r6 -- /bin/bash -c "route add -net 10.10.91.224 netmask 255.255.255.240 gw 10.10.92.1 dev eth2"
 
 echo Direccion r7(18,r5,r9)...
 kathara exec r7 -- /bin/bash -c "ifconfig eth0 10.10.87.126 netmask 255.255.255.128 broadcast 10.10.87.127 up"
 kathara exec r7 -- /bin/bash -c "ifconfig eth1 10.10.92.30 netmask 255.255.255.252 broadcast 10.10.92.31 up"
 kathara exec r7 -- /bin/bash -c "ifconfig eth2 10.10.92.41 netmask 255.255.255.252 broadcast 10.10.92.43 up"
 echo Rutas r7(6,7,13)...
-kathara exec r7 -- /bin/bash -c "route add-net 10.10.89.0 netmask 255.255.255.128 gw 10.10.92.29 dev eth1"
-kathara exec r7 -- /bin/bash -c "route add-net 10.10.90.128 netmask 255.255.255.128 gw 10.10.92.29 dev eth1"
-kathara exec r7 -- /bin/bash -c "route add-net 10.10.90.0 netmask 255.255.255.128 gw 10.10.92.29 dev eth1"
+kathara exec r7 -- /bin/bash -c "route add -net 10.10.89.0 netmask 255.255.255.128 gw 10.10.92.29 dev eth1"
+kathara exec r7 -- /bin/bash -c "route add -net 10.10.90.128 netmask 255.255.255.128 gw 10.10.92.29 dev eth1"
+kathara exec r7 -- /bin/bash -c "route add -net 10.10.90.0 netmask 255.255.255.128 gw 10.10.92.29 dev eth1"
 
 echo Direccion r8(2,9,16,r6,r9,r10)...
 kathara exec r8 -- /bin/bash -c "ifconfig eth0 10.10.87.254 netmask 255.255.255.128 broadcast 10.10.87.255 up"
 kathara exec r8 -- /bin/bash -c "ifconfig eth1 10.10.89.254 netmask 255.255.255.128 broadcast 10.10.89.255 up"
-kathara exec r8 -- /bin/bash -c "ifconfig eth2 10.10.84.254 netmask 255.255.255.255 broadcast 10.10.84.255 up"
+kathara exec r8 -- /bin/bash -c "ifconfig eth2 10.10.84.254 netmask 255.255.255.0 broadcast 10.10.84.255 up"
 kathara exec r8 -- /bin/bash -c "ifconfig eth3 10.10.92.34 netmask 255.255.255.252 broadcast 10.10.92.35 up"
 kathara exec r8 -- /bin/bash -c "ifconfig eth4 10.10.92.45 netmask 255.255.255.252 broadcast 10.10.92.47 up"
 kathara exec r8 -- /bin/bash -c "ifconfig eth5 10.10.92.49 netmask 255.255.255.252 broadcast 10.10.92.51 up"
 echo Rutas r8(1,3,4,5,6,7,8,10,11,12,13,14,15,17,18)...
-kathara exec r8 -- /bin/bash -c "route add-net 10.10.91.64 netmask 255.255.255.192 gw 10.10.92.33 dev eth3"
-kathara exec r8 -- /bin/bash -c "route add-net 10.10.85.0 netmask 255.255.255.0 gw 10.10.92.33 dev eth3"
-kathara exec r8 -- /bin/bash -c "route add-net 10.10.80.0 netmask 255.255.254.0 gw 10.10.92.33 dev eth3"
-kathara exec r8 -- /bin/bash -c "route add-net 10.10.91.0 netmask 255.255.255.192 gw 10.10.92.46 dev eth4"
-kathara exec r8 -- /bin/bash -c "route add-net 10.10.89.0 netmask 255.255.255.128 gw 10.10.92.46 dev eth4"
-kathara exec r8 -- /bin/bash -c "route add-net 10.10.90.128 netmask 255.255.255.128 gw 10.10.92.46 dev eth4"
-kathara exec r8 -- /bin/bash -c "route add-net 10.10.88.128 netmask 255.255.255.128 gw 10.10.92.50 dev eth5"
-kathara exec r8 -- /bin/bash -c "route add-net 10.10.91.128 netmask 255.255.255.192 gw 10.10.92.33 dev eth3"
-kathara exec r8 -- /bin/bash -c "route add-net 10.10.91.224 netmask 255.255.255.240 gw 10.10.92.33 dev eth3"
-kathara exec r8 -- /bin/bash -c "route add-net 10.10.88.0 netmask 255.255.255.128 gw 10.10.92.50 dev eth5"
-kathara exec r8 -- /bin/bash -c "route add-net 10.10.90.0 netmask 255.255.255.128 gw 10.10.92.46 dev eth4"
-kathara exec r8 -- /bin/bash -c "route add-net 10.10.91.192 netmask 255.255.255.224 gw 10.10.92.50 dev eth5"
-kathara exec r8 -- /bin/bash -c "route add-net 10.10.86.0 netmask 255.255.255.0 gw 10.10.92.50 dev eth5"
-kathara exec r8 -- /bin/bash -c "route add-net 10.10.82.0 netmask 255.255.254.0 gw 10.10.92.33 dev eth3"
-kathara exec r8 -- /bin/bash -c "route add-net 10.10.87.0 netmask 255.255.255.128 gw 10.10.92.46 dev eth4"
+kathara exec r8 -- /bin/bash -c "route add -net 10.10.91.64 netmask 255.255.255.192 gw 10.10.92.33 dev eth3"
+kathara exec r8 -- /bin/bash -c "route add -net 10.10.85.0 netmask 255.255.255.0 gw 10.10.92.33 dev eth3"
+kathara exec r8 -- /bin/bash -c "route add -net 10.10.80.0 netmask 255.255.254.0 gw 10.10.92.33 dev eth3"
+kathara exec r8 -- /bin/bash -c "route add -net 10.10.91.0 netmask 255.255.255.192 gw 10.10.92.46 dev eth4"
+kathara exec r8 -- /bin/bash -c "route add -net 10.10.89.0 netmask 255.255.255.128 gw 10.10.92.46 dev eth4"
+kathara exec r8 -- /bin/bash -c "route add -net 10.10.90.128 netmask 255.255.255.128 gw 10.10.92.46 dev eth4"
+kathara exec r8 -- /bin/bash -c "route add -net 10.10.88.128 netmask 255.255.255.128 gw 10.10.92.50 dev eth5"
+kathara exec r8 -- /bin/bash -c "route add -net 10.10.91.128 netmask 255.255.255.192 gw 10.10.92.33 dev eth3"
+kathara exec r8 -- /bin/bash -c "route add -net 10.10.91.224 netmask 255.255.255.240 gw 10.10.92.33 dev eth3"
+kathara exec r8 -- /bin/bash -c "route add -net 10.10.88.0 netmask 255.255.255.128 gw 10.10.92.50 dev eth5"
+kathara exec r8 -- /bin/bash -c "route add -net 10.10.90.0 netmask 255.255.255.128 gw 10.10.92.46 dev eth4"
+kathara exec r8 -- /bin/bash -c "route add -net 10.10.91.192 netmask 255.255.255.224 gw 10.10.92.50 dev eth5"
+kathara exec r8 -- /bin/bash -c "route add -net 10.10.86.0 netmask 255.255.255.0 gw 10.10.92.50 dev eth5"
+kathara exec r8 -- /bin/bash -c "route add -net 10.10.82.0 netmask 255.255.254.0 gw 10.10.92.33 dev eth3"
+kathara exec r8 -- /bin/bash -c "route add -net 10.10.87.0 netmask 255.255.255.128 gw 10.10.92.46 dev eth4"
 
 echo Direccion r9(5,r7,r8)...
 kathara exec r9 -- /bin/bash -c "ifconfig eth0 10.10.91.62 netmask 255.255.255.192 broadcast 10.10.91.63 up"
 kathara exec r9 -- /bin/bash -c "ifconfig eth1 10.10.92.42 netmask 255.255.255.252 broadcast 10.10.92.43 up"
 kathara exec r9 -- /bin/bash -c "ifconfig eth2 10.10.92.46 netmask 255.255.255.252 broadcast 10.10.92.47 up"
 echo Rutas r9(6,7,13,18)...
-kathara exec r9 -- /bin/bash -c "route add-net 10.10.89.0 netmask 255.255.255.128 gw 10.10.92.41 dev eth1"
-kathara exec r9 -- /bin/bash -c "route add-net 10.10.90.128 netmask 255.255.255.128 gw 10.10.92.41 dev eth1"
-kathara exec r9 -- /bin/bash -c "route add-net 10.10.90.0 netmask 255.255.255.128 gw 10.10.92.41 dev eth1"
-kathara exec r9 -- /bin/bash -c "route add-net 10.10.87.0 netmask 255.255.255.128 gw 10.10.92.41 dev eth1"
+kathara exec r9 -- /bin/bash -c "route add -net 10.10.89.0 netmask 255.255.255.128 gw 10.10.92.41 dev eth1"
+kathara exec r9 -- /bin/bash -c "route add -net 10.10.90.128 netmask 255.255.255.128 gw 10.10.92.41 dev eth1"
+kathara exec r9 -- /bin/bash -c "route add -net 10.10.90.0 netmask 255.255.255.128 gw 10.10.92.41 dev eth1"
+kathara exec r9 -- /bin/bash -c "route add -net 10.10.87.0 netmask 255.255.255.128 gw 10.10.92.41 dev eth1"
 
 echo Direccion r10(r3,r4,r8)...
 kathara exec r10 -- /bin/bash -c "ifconfig eth0 10.10.92.22 netmask 255.255.255.252 broadcast 10.10.92.23 up"
 kathara exec r10 -- /bin/bash -c "ifconfig eth1 10.10.92.26 netmask 255.255.255.252 broadcast 10.10.92.27 up"
 kathara exec r10 -- /bin/bash -c "ifconfig eth2 10.10.92.50 netmask 255.255.255.252 broadcast 10.10.92.51 up"
 echo Rutas r10(8,12,14,15)...
-kathara exec r10 -- /bin/bash -c "route add-net 10.10.88.128 netmask 255.255.255.128 gw 10.10.92.21 dev eth0"
-kathara exec r10 -- /bin/bash -c "route add-net 10.10.88.0 netmask 255.255.255.128 gw 10.10.92.25 dev eth1"
-kathara exec r10 -- /bin/bash -c "route add-net 10.10.91.192 netmask 255.255.255.224 gw 10.10.92.25 dev eth1"
-kathara exec r10 -- /bin/bash -c "route add-net 10.10.86.0 netmask 255.255.255.128 gw 10.10.92.25 dev eth1"
+kathara exec r10 -- /bin/bash -c "route add -net 10.10.88.128 netmask 255.255.255.128 gw 10.10.92.21 dev eth0"
+kathara exec r10 -- /bin/bash -c "route add -net 10.10.88.0 netmask 255.255.255.128 gw 10.10.92.25 dev eth1"
+kathara exec r10 -- /bin/bash -c "route add -net 10.10.91.192 netmask 255.255.255.224 gw 10.10.92.25 dev eth1"
+kathara exec r10 -- /bin/bash -c "route add -net 10.10.86.0 netmask 255.255.255.128 gw 10.10.92.25 dev eth1"
 
 
 
