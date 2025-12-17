@@ -1,0 +1,8 @@
+#ifconfig eth0 10.10.91.62 netmask 255.255.255.192 broadcast 10.10.91.63 up
+#ifconfig eth1 10.10.92.42 netmask 255.255.255.252 broadcast 10.10.92.43 up
+#ifconfig eth2 10.10.92.46 netmask 255.255.255.252 broadcast 10.10.92.47 up
+
+#route add -net 10.10.89.0 netmask 255.255.255.128 gw 10.10.92.41 dev eth1
+#route add -net 10.10.90.128 netmask 255.255.255.128 gw 10.10.92.41 dev eth1
+#route add -net 10.10.90.0 netmask 255.255.255.128 gw 10.10.92.41 dev eth1
+#route add -net 10.10.87.0 netmask 255.255.255.128 gw 10.10.92.41 dev eth1

@@ -1,0 +1,2 @@
+#ifconfig eth0 10.10.88.254 netmask 255.255.255.128 broadcast 10.10.88.255 up
+#ifconfig eth1 10.10.92.21 netmask 255.255.255.252 broadcast 10.10.92.23 up

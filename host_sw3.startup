@@ -1,0 +1,2 @@
+#ifconfig eth0 10.10.85.1 netmask 255.255.255.0 broadcast 10.10.85.255 up 
+#route add default gw 10.10.85.254

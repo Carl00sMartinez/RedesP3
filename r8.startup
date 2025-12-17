@@ -1,0 +1,21 @@
+#ifconfig eth0 10.10.87.254 netmask 255.255.255.128 broadcast 10.10.87.255 up
+#ifconfig eth1 10.10.89.254 netmask 255.255.255.128 broadcast 10.10.89.255 up
+#ifconfig eth2 10.10.84.254 netmask 255.255.255.0 broadcast 10.10.84.255 up
+#ifconfig eth3 10.10.92.34 netmask 255.255.255.252 broadcast 10.10.92.35 up
+#ifconfig eth4 10.10.92.45 netmask 255.255.255.252 broadcast 10.10.92.47 up
+#ifconfig eth5 10.10.92.49 netmask 255.255.255.252 broadcast 10.10.92.51 up
+
+#route add -net 10.10.91.64 netmask 255.255.255.192 gw 10.10.92.33 dev eth3
+#route add -net 10.10.85.0 netmask 255.255.255.0 gw 10.10.92.33 dev eth3
+#route add -net 10.10.80.0 netmask 255.255.254.0 gw 10.10.92.33 dev eth3
+#route add -net 10.10.91.0 netmask 255.255.255.192 gw 10.10.92.46 dev eth4
+#route add -net 10.10.89.0 netmask 255.255.255.128 gw 10.10.92.46 dev eth4
+#route add -net 10.10.90.128 netmask 255.255.255.128 gw 10.10.92.46 dev eth4
+#route add -net 10.10.88.128 netmask 255.255.255.128 gw 10.10.92.50 dev eth5
+#route add -net 10.10.91.128 netmask 255.255.255.192 gw 10.10.92.33 dev eth3
+#route add -net 10.10.88.0 netmask 255.255.255.128 gw 10.10.92.50 dev eth5
+#route add -net 10.10.90.0 netmask 255.255.255.128 gw 10.10.92.46 dev eth4
+#route add -net 10.10.91.192 netmask 255.255.255.224 gw 10.10.92.50 dev eth5
+#route add -net 10.10.86.0 netmask 255.255.255.0 gw 10.10.92.50 dev eth5
+#route add -net 10.10.82.0 netmask 255.255.254.0 gw 10.10.92.33 dev eth3
+#route add -net 10.10.87.0 netmask 255.255.255.128 gw 10.10.92.46 dev eth4
